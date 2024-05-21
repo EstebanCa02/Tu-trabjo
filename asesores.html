@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <section class="tank-bootstrap-header">
+    <nav class="navbar navbar-expand-lg navbar-light py-lg-3 py-2">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">MiDestino</a>
+            <button class="navbar-toggler" type="button" 
+            data-toggle="collapse" data-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse"  id="navbarSupportedContent" >
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contacto</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="asesores.html">Asesores</a>
+                    </li>
+                </ul>
+            </div>
+       </div> 
+    </nav>
+</section>
+
+
+</br>
+</br>
+<br>
+
+  <title>Shaf</title>
+</br>
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #d7caca;
+    }
+    form {
+      width: 50%;
+      margin: 20px auto;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input[type="text"], input[type="email"], textarea {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      background-color: #4d4a4a;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      padding: 10px;
+      margin-bottom: 10px;
+      position: relative;
+    }
+    li:hover {
+      background-color: #f9f9f9;
+    }
+    .delete-button {
+      background-color: #f44336;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 50%;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+    .delete-button:hover {
+      background-color: #da190b;
+    }
+  </style>
+</head>
+<body>
+  <h1>Asesor Virtual - Viajes Shaf</h1>
+  <form id="contact-form">
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="phone">Número de teléfono:</label>
+    <input type="tel" id="phone" name="phone" required>
+    <label for="message">Pregunta para el asesor:</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+    <input type="submit" value="Enviar pregunta">
+  </form>
+  <ul id="task-list"></ul>
+  <script>
+    const form = document.getElementById('contact-form');
+    const taskList = document.getElementById('task-list');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = form.name.value;
+      const email = form.email.value;
+      const phone = form.phone.value;
+      const message = form.message.value;
+
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <strong>Nombre:</strong> ${name}<br>
+        <strong>Correo electrónico:</strong> ${email}<br>
+        <strong>Número de teléfono:</strong> ${phone}<br>
+        <strong>Pregunta:</strong> ${message}<br>
+        <button class="delete-button">&times;</button>
+      `;
+
+      taskList.appendChild(li);
+
+      form.reset();
+
+      const deleteButtons = document.getElementsByClassName('delete-button');
+
+      for (const deleteButton of deleteButtons) {
+        deleteButton.addEventListener('click', () => {
+          deleteButton.parentElement.remove();
+        });
+      }
+    });
+
+    const deleteButtons = document.getElementsByClassName('delete-button');
+
+    for (const deleteButton of deleteButtons) {
+      deleteButton.addEventListener('click', () => {
+        deleteButton.parentElement.remove();
+      });
+    }
+  </script>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const taskList = document.getElementById('task-list');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = form.name.value;
+      const email = form.email.value;
+      const phone = form.phone.value;
+      const message = form.message.value;
+
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <strong>Nombre:</strong> ${name}<br>
+        <strong>Correo electrónico:</strong> ${email}<br>
+        <strong>N
