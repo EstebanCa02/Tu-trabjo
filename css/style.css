@@ -340,9 +340,9 @@ h4.sub-title {
     outline: none;
     border-radius: 4px;
     font-size: 16px;
-    -webkit-appearance: none;
     border: 1px solid "dedede";
     padding-right: 38px;
+    -webkit-appearance: none;
     
 }
 
@@ -616,7 +616,6 @@ h4.sub-title {
     outline: none;
     border-radius: 4px;
     font-size: 16px;
-    -webkit-appearance:none;
     border: 1px solid #dedede;  
     padding-right: 38px;
 
